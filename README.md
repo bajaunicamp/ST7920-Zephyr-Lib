@@ -1,4 +1,6 @@
-TODO: Escrever um básico sobre zephyr e sobre como configurar o projeto
+# TODO
 
-TODO: Configuração pro vscode
+- [ ] Escrever um básico sobre zephyr e sobre como configurar o projeto
+
+- [ ] Configuração pro vscode
 
