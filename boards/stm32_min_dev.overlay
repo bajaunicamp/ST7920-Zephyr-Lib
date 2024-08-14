@@ -11,8 +11,8 @@
     aliases {
 
         // Exemplo
-        gps = &usart2;
-        sim800l = &usart3;
+        // gps = &usart2;
+        // sim800l = &usart3;
     };
 };
 
