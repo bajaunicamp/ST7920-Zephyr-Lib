@@ -29,6 +29,7 @@
 
     // Para saber quais canais eu devia usar, eu utilizei o Reference Manual
     // do STM32F103C8T6 (Cada canal de USART usa um diferente)
+    // (https://docs.zephyrproject.org/latest/build/dts/api/bindings/dma/st,stm32-dma-v2bis.html)
     dmas = <&dma1 7 (STM32_DMA_PERIPH_TX | STM32_DMA_PRIORITY_HIGH)>,
            <&dma1 6 (STM32_DMA_PERIPH_RX | STM32_DMA_PRIORITY_HIGH)>;
     dma-names = "tx", "rx";
