@@ -1,3 +1,11 @@
+// Os arquivos .overlay são uma forma abstrata de representar o hardware.
+// Cada "escopo" deste arquivo representa uma parte da placa. Note que partes podem
+// conter outras partes. AS variáveis que estão sendo atribuídas representam uma característica
+// do hardware que está sendo descrito
+
+// Aqui está sendo descrito o escopo "/" (root node). Este escopo representa todo o hardware.
+// Note que nos outros escopos abaixo, utilizamos a forma "&(referencia) {}". Isso permite que acessemos
+// uma parte da descrição do hardware sem ter que descrever todo o caminho (a partir do root node)
 / {
     // LED da BLuepill
     leds {
