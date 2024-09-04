@@ -22,6 +22,8 @@ int main(){
   // Note que o log do programa em execução acontece os dois de uma
   // vez, isso ocorre porque ele é assícrono
   // Por isso tome cuidado com essas funções
+  // WARNING: nunca deixe o while(true) vazio, deixe pelo menos um k_msleep(1)
+  // dentro dele
   while (true) {
     printk("Led aceso\n");
     gpio_pin_set_dt(led, 1);
