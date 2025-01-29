@@ -1,65 +1,10 @@
-// Os arquivos .overlay são uma forma abstrata de representar o hardware.
-// Cada "escopo" deste arquivo representa uma parte da placa. Note que partes podem
-// conter outras partes. AS variáveis que estão sendo atribuídas representam uma característica
-// do hardware que está sendo descrito
-
-// Aqui está sendo descrito o escopo "/" (root node). Este escopo representa todo o hardware.
-// Note que nos outros escopos abaixo, utilizamos a forma "&(referencia) {}". Isso permite que acessemos
-// uma parte da descrição do hardware sem ter que descrever todo o caminho (a partir do root node)
 / {
-    // LED da BLuepill
-    leds {
-        compatible = "gpio-leds";
-        led0: led {
-            gpios = <&gpioc 13 GPIO_ACTIVE_LOW>;
-        };
-    };
-
-    // Usado para inicializar aliases de outros devices no código
-    aliases {
-
-        // Exemplo
-        // gps = &usart2;
-        // sim800l = &usart3;
+    zephyr,user {
+        st7920_gpios = <&gpiob 0 GPIO_ACTIVE_HIGH>, // Não pode mudar
+                <&gpioa 7 GPIO_ACTIVE_HIGH>, // Não pode mudar
+                <&gpioa 6 GPIO_ACTIVE_HIGH>, // Não pode mudar
+                <&gpioa 5 GPIO_ACTIVE_HIGH>; // Não pode mudar
     };
 };
-
-// Exemplo de configuração do USART ASYNC
-// WARNING: não utilize o usart1, ele é utilizado pelo LOG
-&usart2 {
-
-    // Direct Memory Acess
-    // Só é preciso configurá-lo caso você esteja utilizando o UART ASYNC
-    // Quando o STM recebe dados pelo usart ele guarda diretamente em uma array
-    // definida pelo usuário no código, isso permite que o código não seja
-    // travado quando o stm receber dados
-    // (https://docs.zephyrproject.org/latest/doxygen/html/group__uart__async.html)
-
-    // Para saber quais canais eu devia usar, eu utilizei o Reference Manual
-    // do STM32F103C8T6 (Cada canal de USART usa um diferente)
-    // (https://docs.zephyrproject.org/latest/build/dts/api/bindings/dma/st,stm32-dma-v2bis.html)
-    dmas = <&dma1 7 (STM32_DMA_PERIPH_TX | STM32_DMA_PRIORITY_HIGH)>,
-           <&dma1 6 (STM32_DMA_PERIPH_RX | STM32_DMA_PRIORITY_HIGH)>;
-    dma-names = "tx", "rx";
-
-    // Aqui são definidos os pinos do USART 2
-    // (https://docs.zephyrproject.org/latest/boards/others/stm32_min_dev/doc/index.html#id2)
-    pinctrl-0 = <&usart2_tx_pa2 &usart2_rx_pa3>;    //NOTE:
-                                                    // TX: PA2
-                                                    // RX: PA3
-    // Não mudar
-    pinctrl-names = "default";
-
-    // Baudrate do USART2
-    current-speed = <9600>;
-    status = "okay";
-};
-
-// Ativando o Direct Memory Access
-&dma1 {
-    status = "okay";
-};
-
-// TODO: Criar uma configuração de CAN
 
 /* vim: set filetype=dts : */

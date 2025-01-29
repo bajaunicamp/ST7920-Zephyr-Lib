@@ -1,39 +1,57 @@
-// Esse programa de expemplo printa "Hello World!" no LOG no momento em que o led pisca
+#include "zephyr/kernel.h"
+#include <ST7920.h>
+#include <bitmap.h>
 
-#include "zephyr/device.h"
-#include "zephyr/sys/printk.h"
-#include <zephyr/logging/log.h>
-#include <zephyr/drivers/gpio.h>
-#include <zephyr/kernel.h>
+int main() {
 
-LOG_MODULE_REGISTER();
+  ST7920_Init();
+  k_msleep(1000);
 
-const struct gpio_dt_spec *const led = &(const struct gpio_dt_spec)GPIO_DT_SPEC_GET(DT_NODELABEL(led0), gpios);
+  ST7920_GraphicMode(1);
+  ST7920_DrawBitmap(jupiter_logo);
 
-int main(){
-  LOG_INF("Inicializando");
+  k_msleep(1000);
 
-  if(!device_is_ready(led->port)){
-    LOG_ERR("Led não está funcinando");
-  }
+  ST7920_Clear();
 
-  gpio_pin_configure_dt(led, GPIO_OUTPUT_ACTIVE);
-  
-  // Note que o log do programa em execução acontece os dois de uma
-  // vez, isso ocorre porque ele é assícrono
-  // Por isso tome cuidado com essas funções
-  // WARNING: nunca deixe o while(true) vazio, deixe pelo menos um k_msleep(1)
-  // dentro dele
+  ST7920_GraphicMode(0);
+
+  ST7920_SendString(0, 0, "HELLO WORLD");
+  ST7920_SendString(1, 0, "FROM");
+  ST7920_SendString(2, 0, "CONTROLLERSTECH");
+  ST7920_SendString(3, 0, "1234567890!@#$%^");
+
+  k_msleep(2000);
+
+  ST7920_Clear();
+
+  ST7920_GraphicMode(1);
+
+  DrawCircle(110, 31, 12);
+
+  DrawCircle(110, 31, 16);
+
+  DrawLine(3, 60, 127, 33);
+
+  ST7920_Update();
+
+  DrawRectangle(100, 12, 20, 14);
+
+  ST7920_Update();
+
+  DrawFilledRectangle(30, 20, 30, 10);
+
+  ST7920_Update();
+
+  DrawFilledCircle(15, 30, 6);
+
+  ST7920_Update();
+
+  DrawFilledTriangle(1, 5, 10, 5, 6, 15);
+
+  ST7920_Update();
+
   while (true) {
-    printk("Led aceso\n");
-    gpio_pin_set_dt(led, 1);
-
-    // Além do LOG, temos o printk
-
-    k_msleep(1000);
-
-    printk("Led apagado\n");
-    gpio_pin_set_dt(led, 0);
-    k_msleep(1000);
+    k_msleep(10);
   }
 }
