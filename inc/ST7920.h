@@ -87,7 +87,7 @@ void DrawLine(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1);
  *
  * @param x coordenada x do retângulo
  * @param y coordenada y do retângulo
- * @param w a largura (witdth) do retângulo
+ * @param w a largura (width) do retângulo
  * @param h a altura (height) do retângulo
  */
 void DrawRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h);
@@ -99,7 +99,7 @@ void DrawRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h);
  *
  * @param x coordenada x do retângulo
  * @param y coordenada y do retângulo
- * @param w a largura (witdth) do retângulo
+ * @param w a largura (width) do retângulo
  * @param h a altura (height) do retângulo
  */
 void DrawFilledRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h);

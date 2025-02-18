@@ -7,92 +7,53 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}stdint.h"{}}}
 \DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{comment}{//\ A\ replacement\ for\ SPI\_TRANSMIT}}
-\DoxyCodeLine{00007\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a520d7e861a3decb577178b5b553f80a3}{SendByteSPI}}(uint8\_t\ \textcolor{keywordtype}{byte});}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{comment}{//\ Send\ the\ command\ to\ the\ LCD}}
-\DoxyCodeLine{00011\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a84f95ce8e86af8e1413cbd5ed015d8b6}{ST7920\_SendCmd}}\ (uint8\_t\ cmd);}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{comment}{//\ send\ the\ data\ to\ the\ LCD}}
-\DoxyCodeLine{00015\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_ace73e99a8e7a6a5e10523027bc78fbe5}{ST7920\_SendData}}\ (uint8\_t\ data);}
-\DoxyCodeLine{00016\ }
 \DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \textcolor{comment}{/*\ send\ the\ string\ to\ the\ LCD}}
-\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ 'row'\ =\ starting\ ROW\ for\ the\ string\ (from\ 0\ to\ 3)}}
-\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ 'col'\ =\ starting\ COL\ for\ the\ string\ (from\ 0\ to\ 7)}}
-\DoxyCodeLine{00021\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{00022\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a7df1e73132cf0848cbdf64c94f9c8e60}{ST7920\_SendString}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col,\ \textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{string});}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{comment}{/*\ ENABLE\ or\ DISABLE\ the\ graphic\ mode}}
-\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ enable\ =1\ -\/-\/>\ graphic\ mode\ enabled}}
-\DoxyCodeLine{00027\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_abe08f96815acddfc731734e85ff85fb2}{ST7920\_GraphicMode}}\ (\textcolor{keywordtype}{int}\ enable);}
-\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_s_t7920_8h_aa07db466ce607a3c140eecfd9f91d1a5}{ST7920\_Init}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a7df1e73132cf0848cbdf64c94f9c8e60}{ST7920\_SendString}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col,\ \textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{string});}
 \DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \textcolor{comment}{//\ clear\ screen\ in\ any\ mode}}
-\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_acbb6f8aff84a85affa631fea5f4c1bde}{ST7920\_Clear}}();}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \textcolor{comment}{//\ Draw\ bitmap\ on\ the\ display}}
-\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a0d69c522709971a6283d3272ec78e4ef}{ST7920\_DrawBitmap}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ graphic);}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \textcolor{comment}{//\ Update\ the\ display\ with\ the\ selected\ graphics}}
-\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a9a76d7097278850b2a40c231ecddd17f}{ST7920\_Update}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_abe08f96815acddfc731734e85ff85fb2}{ST7920\_GraphicMode}}\ (\textcolor{keywordtype}{int}\ enable);}
+\DoxyCodeLine{00041\ }
 \DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \textcolor{comment}{//\ Initialize\ the\ display}}
-\DoxyCodeLine{00046\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_s_t7920_8h_aa07db466ce607a3c140eecfd9f91d1a5}{ST7920\_Init}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_acbb6f8aff84a85affa631fea5f4c1bde}{ST7920\_Clear}}();}
 \DoxyCodeLine{00047\ }
 \DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \textcolor{comment}{/*\ Common\ functions\ used}}
-\DoxyCodeLine{00050\ \textcolor{comment}{\ *\ in\ other\ LCDs\ also}}
-\DoxyCodeLine{00051\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \textcolor{comment}{//\ Set\ a\ pixel\ on\ the\ display}}
-\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a86a9e1a782ba2aefde51c2382491403d}{SetPixel}}(uint8\_t\ x,\ uint8\_t\ y);}
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a0d69c522709971a6283d3272ec78e4ef}{ST7920\_DrawBitmap}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ graphic);}
 \DoxyCodeLine{00056\ }
 \DoxyCodeLine{00057\ }
 \DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \textcolor{comment}{//\ draw\ line\ from\ (X0,\ Y0)\ to\ (X1,\ Y1)}}
-\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a239b946ef5823d48c1fca7d2da071572}{DrawLine}}(uint8\_t\ x0,\ uint8\_t\ y0,\ uint8\_t\ x1,\ uint8\_t\ y1);}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00063\ \textcolor{comment}{//\ draw\ rectangle\ from\ (X,Y)\ w-\/\ width,\ h-\/\ height}}
-\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a8173c55ea9c62e67f3b724d21adeb554}{DrawRectangle}}(uint16\_t\ x,\ uint16\_t\ y,\ uint16\_t\ w,\ uint16\_t\ h);}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ \textcolor{comment}{//\ draw\ filled\ rectangle}}
-\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_ad80f2395138398747a9f8e6dc50ba150}{DrawFilledRectangle}}(uint16\_t\ x,\ uint16\_t\ y,\ uint16\_t\ w,\ uint16\_t\ h);}
-\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a9a76d7097278850b2a40c231ecddd17f}{ST7920\_Update}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a86a9e1a782ba2aefde51c2382491403d}{SetPixel}}(uint8\_t\ x,\ uint8\_t\ y);}
 \DoxyCodeLine{00071\ }
 \DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \textcolor{comment}{//\ draw\ circle\ with\ centre\ (X0,\ Y0)\ and\ radius=\ radius}}
-\DoxyCodeLine{00074\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a8fd53d380d438b4cc85ead7369430493}{DrawCircle}}(uint8\_t\ x0,\ uint8\_t\ y0,\ uint8\_t\ radius);}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \textcolor{comment}{//\ Draw\ Filled\ Circle\ with\ centre\ (X0,\ Y0)\ and\ radius=\ r}}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a134f41ba6ec9613b88e1036b658dc5f4}{DrawFilledCircle}}(int16\_t\ x0,\ int16\_t\ y0,\ int16\_t\ r);}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00082\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a239b946ef5823d48c1fca7d2da071572}{DrawLine}}(uint8\_t\ x0,\ uint8\_t\ y0,\ uint8\_t\ x1,\ uint8\_t\ y1);}
 \DoxyCodeLine{00083\ }
-\DoxyCodeLine{00084\ \textcolor{comment}{//\ Draw\ Traingle\ with\ coordimates\ (x1,\ y1),\ (x2,\ y2),\ (x3,\ y3)}}
-\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a9e9e683e7be4f08188bd8947a7b79489}{DrawTriangle}}(uint16\_t\ x1,\ uint16\_t\ y1,\ uint16\_t\ x2,\ uint16\_t\ y2,\ uint16\_t\ x3,\ uint16\_t\ y3);}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00089\ \textcolor{comment}{//\ Draw\ Filled\ Traingle\ with\ coordimates\ (x1,\ y1),\ (x2,\ y2),\ (x3,\ y3)}}
-\DoxyCodeLine{00090\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a84055efa52762d777ce1b31c0e73c1f8}{DrawFilledTriangle}}(uint16\_t\ x1,\ uint16\_t\ y1,\ uint16\_t\ x2,\ uint16\_t\ y2,\ uint16\_t\ x3,\ uint16\_t\ y3);}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !ST7920\_H}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00093\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a8173c55ea9c62e67f3b724d21adeb554}{DrawRectangle}}(uint16\_t\ x,\ uint16\_t\ y,\ uint16\_t\ w,\ uint16\_t\ h);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00105\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_ad80f2395138398747a9f8e6dc50ba150}{DrawFilledRectangle}}(uint16\_t\ x,\ uint16\_t\ y,\ uint16\_t\ w,\ uint16\_t\ h);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a8fd53d380d438b4cc85ead7369430493}{DrawCircle}}(uint8\_t\ x0,\ uint8\_t\ y0,\ uint8\_t\ radius);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00127\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a134f41ba6ec9613b88e1036b658dc5f4}{DrawFilledCircle}}(int16\_t\ x0,\ int16\_t\ y0,\ int16\_t\ r);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00141\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a9e9e683e7be4f08188bd8947a7b79489}{DrawTriangle}}(uint16\_t\ x1,\ uint16\_t\ y1,\ uint16\_t\ x2,\ uint16\_t\ y2,\ uint16\_t\ x3,\ uint16\_t\ y3);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00155\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_t7920_8h_a84055efa52762d777ce1b31c0e73c1f8}{DrawFilledTriangle}}(uint16\_t\ x1,\ uint16\_t\ y1,\ uint16\_t\ x2,\ uint16\_t\ y2,\ uint16\_t\ x3,\ uint16\_t\ y3);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !ST7920\_H}}
 
 \end{DoxyCode}

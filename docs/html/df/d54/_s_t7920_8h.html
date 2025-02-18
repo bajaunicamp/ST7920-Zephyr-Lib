@@ -103,48 +103,64 @@ $(function(){initNavTree('df/d54/_s_t7920_8h.html','../../'); initResizable(true
   <div class="headertitle"><div class="title">Referência do Arquivo ST7920.h</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Biblioteca para utilização do display ST7920 com bitbanging.  
+<a href="#details">Mais...</a></p>
 <div class="textblock"><code>#include &quot;stdint.h&quot;</code><br />
 </div>
 <p><a href="../../df/d54/_s_t7920_8h_source.html">Ir para o código-fonte desse arquivo.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funções</h2></td></tr>
-<tr class="memitem:a520d7e861a3decb577178b5b553f80a3" id="r_a520d7e861a3decb577178b5b553f80a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a520d7e861a3decb577178b5b553f80a3">SendByteSPI</a> (uint8_t byte)</td></tr>
-<tr class="separator:a520d7e861a3decb577178b5b553f80a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84f95ce8e86af8e1413cbd5ed015d8b6" id="r_a84f95ce8e86af8e1413cbd5ed015d8b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84f95ce8e86af8e1413cbd5ed015d8b6">ST7920_SendCmd</a> (uint8_t cmd)</td></tr>
-<tr class="separator:a84f95ce8e86af8e1413cbd5ed015d8b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace73e99a8e7a6a5e10523027bc78fbe5" id="r_ace73e99a8e7a6a5e10523027bc78fbe5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace73e99a8e7a6a5e10523027bc78fbe5">ST7920_SendData</a> (uint8_t data)</td></tr>
-<tr class="separator:ace73e99a8e7a6a5e10523027bc78fbe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa07db466ce607a3c140eecfd9f91d1a5" id="r_aa07db466ce607a3c140eecfd9f91d1a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa07db466ce607a3c140eecfd9f91d1a5">ST7920_Init</a> (void)</td></tr>
+<tr class="memdesc:aa07db466ce607a3c140eecfd9f91d1a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa o Display.  <br /></td></tr>
+<tr class="separator:aa07db466ce607a3c140eecfd9f91d1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7df1e73132cf0848cbdf64c94f9c8e60" id="r_a7df1e73132cf0848cbdf64c94f9c8e60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7df1e73132cf0848cbdf64c94f9c8e60">ST7920_SendString</a> (int row, int col, char *string)</td></tr>
+<tr class="memdesc:a7df1e73132cf0848cbdf64c94f9c8e60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envia uma string para o LCD em uma determinada linha e coluna.  <br /></td></tr>
 <tr class="separator:a7df1e73132cf0848cbdf64c94f9c8e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe08f96815acddfc731734e85ff85fb2" id="r_abe08f96815acddfc731734e85ff85fb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe08f96815acddfc731734e85ff85fb2">ST7920_GraphicMode</a> (int enable)</td></tr>
+<tr class="memdesc:abe08f96815acddfc731734e85ff85fb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">É necessário habilitar ou desabilitar o modo gráfico para escrever textos ou desenhar imagens.  <br /></td></tr>
 <tr class="separator:abe08f96815acddfc731734e85ff85fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbb6f8aff84a85affa631fea5f4c1bde" id="r_acbb6f8aff84a85affa631fea5f4c1bde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbb6f8aff84a85affa631fea5f4c1bde">ST7920_Clear</a> ()</td></tr>
+<tr class="memdesc:acbb6f8aff84a85affa631fea5f4c1bde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limpa a tela em qualquer modo.  <br /></td></tr>
 <tr class="separator:acbb6f8aff84a85affa631fea5f4c1bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d69c522709971a6283d3272ec78e4ef" id="r_a0d69c522709971a6283d3272ec78e4ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d69c522709971a6283d3272ec78e4ef">ST7920_DrawBitmap</a> (const unsigned char *graphic)</td></tr>
+<tr class="memdesc:a0d69c522709971a6283d3272ec78e4ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desenha um bitmap na tela.  <br /></td></tr>
 <tr class="separator:a0d69c522709971a6283d3272ec78e4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a76d7097278850b2a40c231ecddd17f" id="r_a9a76d7097278850b2a40c231ecddd17f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a76d7097278850b2a40c231ecddd17f">ST7920_Update</a> (void)</td></tr>
+<tr class="memdesc:a9a76d7097278850b2a40c231ecddd17f"><td class="mdescLeft">&#160;</td><td class="mdescRight">desenha na tela as formas geométricas que foram definidas  <br /></td></tr>
 <tr class="separator:a9a76d7097278850b2a40c231ecddd17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa07db466ce607a3c140eecfd9f91d1a5" id="r_aa07db466ce607a3c140eecfd9f91d1a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa07db466ce607a3c140eecfd9f91d1a5">ST7920_Init</a> (void)</td></tr>
-<tr class="separator:aa07db466ce607a3c140eecfd9f91d1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86a9e1a782ba2aefde51c2382491403d" id="r_a86a9e1a782ba2aefde51c2382491403d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86a9e1a782ba2aefde51c2382491403d">SetPixel</a> (uint8_t x, uint8_t y)</td></tr>
+<tr class="memdesc:a86a9e1a782ba2aefde51c2382491403d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define um pixel a ser desenhado.  <br /></td></tr>
 <tr class="separator:a86a9e1a782ba2aefde51c2382491403d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a239b946ef5823d48c1fca7d2da071572" id="r_a239b946ef5823d48c1fca7d2da071572"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a239b946ef5823d48c1fca7d2da071572">DrawLine</a> (uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1)</td></tr>
+<tr class="memdesc:a239b946ef5823d48c1fca7d2da071572"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define uma linha a ser desenhada.  <br /></td></tr>
 <tr class="separator:a239b946ef5823d48c1fca7d2da071572"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8173c55ea9c62e67f3b724d21adeb554" id="r_a8173c55ea9c62e67f3b724d21adeb554"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8173c55ea9c62e67f3b724d21adeb554">DrawRectangle</a> (uint16_t x, uint16_t y, uint16_t w, uint16_t h)</td></tr>
+<tr class="memdesc:a8173c55ea9c62e67f3b724d21adeb554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define retângulo a ser desenhado.  <br /></td></tr>
 <tr class="separator:a8173c55ea9c62e67f3b724d21adeb554"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad80f2395138398747a9f8e6dc50ba150" id="r_ad80f2395138398747a9f8e6dc50ba150"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad80f2395138398747a9f8e6dc50ba150">DrawFilledRectangle</a> (uint16_t x, uint16_t y, uint16_t w, uint16_t h)</td></tr>
+<tr class="memdesc:ad80f2395138398747a9f8e6dc50ba150"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define retângulo preenchido a ser desenhado.  <br /></td></tr>
 <tr class="separator:ad80f2395138398747a9f8e6dc50ba150"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fd53d380d438b4cc85ead7369430493" id="r_a8fd53d380d438b4cc85ead7369430493"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fd53d380d438b4cc85ead7369430493">DrawCircle</a> (uint8_t x0, uint8_t y0, uint8_t radius)</td></tr>
+<tr class="memdesc:a8fd53d380d438b4cc85ead7369430493"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define um círculo a ser desenhado.  <br /></td></tr>
 <tr class="separator:a8fd53d380d438b4cc85ead7369430493"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a134f41ba6ec9613b88e1036b658dc5f4" id="r_a134f41ba6ec9613b88e1036b658dc5f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a134f41ba6ec9613b88e1036b658dc5f4">DrawFilledCircle</a> (int16_t x0, int16_t y0, int16_t r)</td></tr>
+<tr class="memdesc:a134f41ba6ec9613b88e1036b658dc5f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define um círculo preenchido a ser desenhado.  <br /></td></tr>
 <tr class="separator:a134f41ba6ec9613b88e1036b658dc5f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e9e683e7be4f08188bd8947a7b79489" id="r_a9e9e683e7be4f08188bd8947a7b79489"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e9e683e7be4f08188bd8947a7b79489">DrawTriangle</a> (uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3)</td></tr>
+<tr class="memdesc:a9e9e683e7be4f08188bd8947a7b79489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define um triângulo a ser desenhado.  <br /></td></tr>
 <tr class="separator:a9e9e683e7be4f08188bd8947a7b79489"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84055efa52762d777ce1b31c0e73c1f8" id="r_a84055efa52762d777ce1b31c0e73c1f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84055efa52762d777ce1b31c0e73c1f8">DrawFilledTriangle</a> (uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3)</td></tr>
+<tr class="memdesc:a84055efa52762d777ce1b31c0e73c1f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define um triângulo preenchido a ser desenhado.  <br /></td></tr>
 <tr class="separator:a84055efa52762d777ce1b31c0e73c1f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Funções</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Biblioteca para utilização do display ST7920 com bitbanging. </p>
+<p>Esta biblioteca é uma tradução do código da ControllersTech para Zephyr. (<a href="https://controllerstech.com/glcd-128x64-st7920-interfacing-with-stm32/">https://controllerstech.com/glcd-128x64-st7920-interfacing-with-stm32/</a>)</p>
+<p>Essa biblioteca faz um bitbanging de SPI para enviar os dados para o display.</p>
+<dl class="section author"><dt>Autor</dt><dd>Giancarlo Bonvenuto </dd></dl>
+</div><h2 class="groupheader">Funções</h2>
 <a id="a8fd53d380d438b4cc85ead7369430493" name="a8fd53d380d438b4cc85ead7369430493"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8fd53d380d438b4cc85ead7369430493">&#9670;&#160;</a></span>DrawCircle()</h2>
 
@@ -168,6 +184,16 @@ Funções</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Define um círculo a ser desenhado. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x0</td><td>coordenada x do círculo </td></tr>
+    <tr><td class="paramname">y0</td><td>coordenada y do círculo </td></tr>
+    <tr><td class="paramname">radius</td><td>raio do círculo </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -194,6 +220,16 @@ Funções</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Define um círculo preenchido a ser desenhado. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x0</td><td>coordenada x do círculo </td></tr>
+    <tr><td class="paramname">y0</td><td>coordenada y do círculo </td></tr>
+    <tr><td class="paramname">r</td><td>raio do círculo </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -225,6 +261,17 @@ Funções</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Define retângulo preenchido a ser desenhado. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>coordenada x do retângulo </td></tr>
+    <tr><td class="paramname">y</td><td>coordenada y do retângulo </td></tr>
+    <tr><td class="paramname">w</td><td>a largura (width) do retângulo </td></tr>
+    <tr><td class="paramname">h</td><td>a altura (height) do retângulo </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -267,6 +314,19 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Define um triângulo preenchido a ser desenhado. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x1</td><td>coordenada x do primeiro vértice </td></tr>
+    <tr><td class="paramname">y1</td><td>coordenada y do primeiro vértice </td></tr>
+    <tr><td class="paramname">x2</td><td>coordenada x do segundo vértice </td></tr>
+    <tr><td class="paramname">y2</td><td>coordenada y do segundo vértice </td></tr>
+    <tr><td class="paramname">x3</td><td>coordenada x do terceiro vértice </td></tr>
+    <tr><td class="paramname">y3</td><td>coordenada y do terceiro vértice </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a239b946ef5823d48c1fca7d2da071572" name="a239b946ef5823d48c1fca7d2da071572"></a>
@@ -298,6 +358,17 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Define uma linha a ser desenhada. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x0</td><td>coordenada x inicial da linha </td></tr>
+    <tr><td class="paramname">y0</td><td>coordenada y inicial da linha </td></tr>
+    <tr><td class="paramname">x1</td><td>coordenada x final da linha </td></tr>
+    <tr><td class="paramname">y1</td><td>coordenada y final da linha </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a8173c55ea9c62e67f3b724d21adeb554" name="a8173c55ea9c62e67f3b724d21adeb554"></a>
@@ -328,6 +399,17 @@ Funções</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Define retângulo a ser desenhado. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>coordenada x do retângulo </td></tr>
+    <tr><td class="paramname">y</td><td>coordenada y do retângulo </td></tr>
+    <tr><td class="paramname">w</td><td>a largura (width) do retângulo </td></tr>
+    <tr><td class="paramname">h</td><td>a altura (height) do retângulo </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -370,22 +452,18 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a520d7e861a3decb577178b5b553f80a3" name="a520d7e861a3decb577178b5b553f80a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a520d7e861a3decb577178b5b553f80a3">&#9670;&#160;</a></span>SendByteSPI()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SendByteSPI </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>byte</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Define um triângulo a ser desenhado. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x1</td><td>coordenada x do primeiro vértice </td></tr>
+    <tr><td class="paramname">y1</td><td>coordenada y do primeiro vértice </td></tr>
+    <tr><td class="paramname">x2</td><td>coordenada x do segundo vértice </td></tr>
+    <tr><td class="paramname">y2</td><td>coordenada y do segundo vértice </td></tr>
+    <tr><td class="paramname">x3</td><td>coordenada x do terceiro vértice </td></tr>
+    <tr><td class="paramname">y3</td><td>coordenada y do terceiro vértice </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -408,6 +486,15 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Define um pixel a ser desenhado. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>coordenada x do pixel </td></tr>
+    <tr><td class="paramname">y</td><td>coordenada y do pixel </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="acbb6f8aff84a85affa631fea5f4c1bde" name="acbb6f8aff84a85affa631fea5f4c1bde"></a>
@@ -424,6 +511,8 @@ Funções</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Limpa a tela em qualquer modo. </p>
 
 </div>
 </div>
@@ -442,6 +531,14 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Desenha um bitmap na tela. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">graphic</td><td>é uma array de bits. Você pode gerar um bitmap a partir de um png neste website: <a href="https://javl.github.io/image2cpp/">https://javl.github.io/image2cpp/</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="abe08f96815acddfc731734e85ff85fb2" name="abe08f96815acddfc731734e85ff85fb2"></a>
@@ -458,6 +555,18 @@ Funções</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>É necessário habilitar ou desabilitar o modo gráfico para escrever textos ou desenhar imagens. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enable</td><td><ul>
+<li><code>0</code> desativa o modo gráfico e permite que textos possam ser escritos na tela</li>
+<li><code>1</code> ativa o modo gráfico e permite que bitmaps e formas geométricas possam ser desenhadas na tela </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -476,39 +585,7 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a84f95ce8e86af8e1413cbd5ed015d8b6" name="a84f95ce8e86af8e1413cbd5ed015d8b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84f95ce8e86af8e1413cbd5ed015d8b6">&#9670;&#160;</a></span>ST7920_SendCmd()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ST7920_SendCmd </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>cmd</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ace73e99a8e7a6a5e10523027bc78fbe5" name="ace73e99a8e7a6a5e10523027bc78fbe5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace73e99a8e7a6a5e10523027bc78fbe5">&#9670;&#160;</a></span>ST7920_SendData()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ST7920_SendData </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Inicializa o Display. </p>
 
 </div>
 </div>
@@ -536,6 +613,15 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Envia uma string para o LCD em uma determinada linha e coluna. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>Define a linha em que será escrito o texto, pode ser de 0 a 3 </td></tr>
+    <tr><td class="paramname">col</td><td>Define a coluna em que será escrito o text, pode ser de 0 a 7 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a9a76d7097278850b2a40c231ecddd17f" name="a9a76d7097278850b2a40c231ecddd17f"></a>
@@ -552,6 +638,8 @@ Funções</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>desenha na tela as formas geométricas que foram definidas </p>
 
 </div>
 </div>
