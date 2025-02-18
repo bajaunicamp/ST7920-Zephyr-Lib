@@ -3,90 +3,154 @@
 
 #include "stdint.h"
 
-// A replacement for SPI_TRANSMIT
-void SendByteSPI(uint8_t byte);
+/**
+ * @file
+ * @brief Biblioteca para utilização do display ST7920 com bitbanging.
+ *
+ * Esta biblioteca é uma tradução do código da ControllersTech para Zephyr. (https://controllerstech.com/glcd-128x64-st7920-interfacing-with-stm32/)
+ *
+ * Essa biblioteca faz um bitbanging de SPI para enviar os dados para o display.
+ *
+ * @author Giancarlo Bonvenuto
+ */
 
+/**
+ * Inicializa o Display
+ */
+int ST7920_Init (void);
 
-// Send the command to the LCD
-void ST7920_SendCmd (uint8_t cmd);
-
-
-// send the data to the LCD
-void ST7920_SendData (uint8_t data);
-
-
-/* send the string to the LCD
- * 'row' = starting ROW for the string (from 0 to 3)
- * 'col' = starting COL for the string (from 0 to 7)
+/** 
+ * @brief Envia uma string para o LCD em uma determinada linha e coluna
+ *
+ * @param row Define a linha em que será escrito o texto, pode ser de 0 a 3
+ * @param col Define a coluna em que será escrito o text, pode ser de 0 a 7
  */
 void ST7920_SendString(int row, int col, char* string);
 
 
-/* ENABLE or DISABLE the graphic mode
- * enable =1 --> graphic mode enabled
+/**
+ * @brief É necessário habilitar ou desabilitar o modo gráfico para escrever textos
+ * ou desenhar imagens
+ *
+ * @param enable:
+ *  - `0` desativa o modo gráfico e permite que textos possam ser escritos na tela
+ *  - `1` ativa o modo gráfico e permite que bitmaps e formas geométricas possam ser desenhadas na tela
  */
 void ST7920_GraphicMode (int enable);
 
 
-// clear screen in any mode
+/**
+ * @brief Limpa a tela em qualquer modo
+ */
 void ST7920_Clear();
 
 
-// Draw bitmap on the display
+/**
+ * @brief Desenha um bitmap na tela
+ *
+ * @param graphic é uma array de bits. Você pode gerar um bitmap a partir de
+ * um png neste website: https://javl.github.io/image2cpp/
+ */
 void ST7920_DrawBitmap(const unsigned char* graphic);
 
 
 
-// Update the display with the selected graphics
+/**
+ * @brief desenha na tela as formas geométricas que foram definidas
+ */
 void ST7920_Update(void);
 
-
-
-// Initialize the display
-int ST7920_Init (void);
-
-
-/* Common functions used
- * in other LCDs also
+/**
+ * @brief Define um pixel a ser desenhado
+ *
+ * @param x coordenada x do pixel
+ * @param y coordenada y do pixel
  */
-
-
-// Set a pixel on the display
 void SetPixel(uint8_t x, uint8_t y);
 
 
 
-// draw line from (X0, Y0) to (X1, Y1)
+/**
+ * @brief Define uma linha a ser desenhada
+ *
+ * @param x0 coordenada x inicial da linha
+ * @param y0 coordenada y inicial da linha
+ * @param x1 coordenada x final da linha
+ * @param y1 coordenada y final da linha
+ */
 void DrawLine(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1);
 
 
-// draw rectangle from (X,Y) w- width, h- height
+/**
+ * @brief Define retângulo a ser desenhado
+ *
+ * @param x coordenada x do retângulo
+ * @param y coordenada y do retângulo
+ * @param w a largura (witdth) do retângulo
+ * @param h a altura (height) do retângulo
+ */
 void DrawRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h);
 
 
 
-// draw filled rectangle
+/**
+ * @brief Define retângulo preenchido a ser desenhado
+ *
+ * @param x coordenada x do retângulo
+ * @param y coordenada y do retângulo
+ * @param w a largura (witdth) do retângulo
+ * @param h a altura (height) do retângulo
+ */
 void DrawFilledRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h);
 
 
 
-// draw circle with centre (X0, Y0) and radius= radius
+/**
+ * @brief Define um círculo a ser desenhado
+ *
+ * @param x0 coordenada x do círculo
+ * @param y0 coordenada y do círculo
+ * @param radius raio do círculo
+ */
 void DrawCircle(uint8_t x0, uint8_t y0, uint8_t radius);
 
 
 
-// Draw Filled Circle with centre (X0, Y0) and radius= r
-
+/**
+ * @brief Define um círculo preenchido a ser desenhado
+ *
+ * @param x0 coordenada x do círculo
+ * @param y0 coordenada y do círculo
+ * @param r raio do círculo
+ */
 void DrawFilledCircle(int16_t x0, int16_t y0, int16_t r);
 
 
 
-// Draw Traingle with coordimates (x1, y1), (x2, y2), (x3, y3)
+/**
+ * @brief Define um triângulo a ser desenhado
+ *
+ * @param x1 coordenada x do primeiro vértice
+ * @param y1 coordenada y do primeiro vértice
+ * @param x2 coordenada x do segundo vértice
+ * @param y2 coordenada y do segundo vértice
+ * @param x3 coordenada x do terceiro vértice
+ * @param y3 coordenada y do terceiro vértice
+ */
 void DrawTriangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3);
 
 
 
-// Draw Filled Traingle with coordimates (x1, y1), (x2, y2), (x3, y3)
+/**
+ * @brief Define um triângulo preenchido a ser desenhado
+ *
+ * @param x1 coordenada x do primeiro vértice
+ * @param y1 coordenada y do primeiro vértice
+ * @param x2 coordenada x do segundo vértice
+ * @param y2 coordenada y do segundo vértice
+ * @param x3 coordenada x do terceiro vértice
+ * @param y3 coordenada y do terceiro vértice
+ */
 void DrawFilledTriangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3);
 
 #endif // !ST7920_H
