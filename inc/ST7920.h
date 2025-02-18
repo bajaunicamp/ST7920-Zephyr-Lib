@@ -7,7 +7,8 @@
  * @file
  * @brief Biblioteca para utilização do display ST7920 com bitbanging.
  *
- * Esta biblioteca é uma tradução do código da ControllersTech para Zephyr. (https://controllerstech.com/glcd-128x64-st7920-interfacing-with-stm32/)
+ * Esta biblioteca é uma tradução do código da ControllersTech para Zephyr. 
+ * (https://controllerstech.com/glcd-128x64-st7920-interfacing-with-stm32/)
  *
  * Essa biblioteca faz um bitbanging de SPI para enviar os dados para o display.
  *
